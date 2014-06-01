@@ -58,7 +58,9 @@ module.exports = function (grunt) {
 
     // *->    put other dependencies here   <-*
     'linker/js/jquery-2.1.1.js',
-    'linker/js/jquery-2.1.1.min.js',
+    'linker/js/bootstrap.js',
+    'linker/js/chessboard-0.3.0.js',
+    'linker/js/superagent.js',
 
     // All of the rest of your app scripts imported here
     'linker/**/*.js'

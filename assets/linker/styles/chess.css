@@ -1,0 +1,11 @@
+div#top {
+  margin-bottom: 30px;
+}
+
+#board {
+  margin: 20px 0px;
+}
+
+h1.title {
+  text-align: center;
+}
