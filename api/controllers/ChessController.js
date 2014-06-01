@@ -18,6 +18,24 @@
 module.exports = {
     
   index : function(req, res) {
+
+
+    var java = require('java');
+    // console.log(java.classpath);
+
+    var MyClass = java.import('classifier.MyClass');
+    var string = MyClass.returnStringSync();
+    console.log('Testing string: ');
+    console.log(string);
+
+    var list = MyClass.returnListSync();
+    console.log('Testing list: ');
+    console.log(list);
+
+    var result = MyClass.addNumbersSync(1, 2);
+    console.log('Testing java: ');
+    console.log(result);
+
     res.view();
   },
 

@@ -9,7 +9,8 @@
     "sails-disk": "~0.9.0",
     "ejs": "0.8.4",
     "optimist": "0.3.4",
-    "superagent": "^0.18.0"
+    "superagent": "^0.18.0",
+    "java": "^0.3.3"
   },
   "scripts": {
     "start": "node app.js",

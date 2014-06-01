@@ -7,10 +7,8 @@ $(document).ready(function() {
   };
   var board = new ChessBoard('board', cfg);
 
-  var request = require('superagent');
-  
-  request
-    .get('http://google.com')
+  superagent
+    .get('/chess/')
     .end(function(res) {
       console.log('hello');
     });
