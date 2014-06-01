@@ -1,0 +1,33 @@
+#!/bin/bash
+
+HOME=$PWD
+
+CLASSIFIER=$HOME/node_modules/java/src-java/classifier
+
+if [ ! -d $CLASSIFIER ]; then
+   mkdir $CLASSIFIER
+fi
+
+FILES_TEXT=""
+
+pushd .
+
+cd ./java/classifier
+
+for file in *
+do
+   if [[ -f $file ]]; then
+      extension="${file##*.}"
+
+      if [ $extension == "java" ]; then
+         FILES_TEXT="$file $FILES_TEXT"
+      fi
+   fi
+done
+
+echo javac $FILES_TEXT
+javac $FILES_TEXT
+
+cp *.class $CLASSIFIER/
+
+popd

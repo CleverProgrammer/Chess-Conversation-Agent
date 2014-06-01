@@ -1,0 +1,109 @@
+
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="textarea-helper.js"></script>
+    <!--<script type="text/javascript" src="speech-recognizer.js"></script>-->
+	<script type="text/javascript" src="annyang.min.js"></script>
+	<script>
+	"use strict";
+	
+	var pieces = ['king', 'queen', 'bishop', 'knight', 'rook', 'castle', 'pawn'];
+	var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+	var numbers = ['1', '2', '3', '4', '5', '6', '7', '8'];
+	
+	var moves = new Array(pieces.length * letters.length * numbers.length);
+	var curmove = 0;
+	
+	var datas = new Array(pieces.length * letters.length * numbers.length);
+	
+	for (var p = 0; p < pieces.length; ++p) {
+		for (var l = 0; l < letters.length; ++l) {
+			for (var n = 0; n < numbers.length; ++n) {
+				moves[n + l*numbers.length + p*(numbers.length*letters.length)] = 
+					pieces[p] + ' to ' + letters[l] + numbers[n];
+				datas[n + l*numbers.length + p*(numbers.length*letters.length)] = '';
+			}
+		}
+	}
+	
+	var what = function() {
+		var textArea = document.getElementById('speech-page-content');
+		var data = '';
+		for (var i = 0; i < moves.length; ++i) {
+			data += moves[i] + '\n';
+		}
+		textArea.value=data;
+	}
+	
+	var stop = function() {
+		var textArea = document.getElementById('speech-page-content');
+		var data = '';
+		for (var i = 0; i < datas.length; ++i) {
+			data += datas[i] + '\n';
+		}
+		textArea.value=data;
+	}
+	
+	function sleep(miliseconds) {
+		var currentTime = new Date().getTime();
+
+		while (currentTime + miliseconds >= new Date().getTime()) {}
+	}
+	
+	var read = function(tag) {
+		if (tag == "stop") {
+			stop();
+		}
+		else if (tag == "what") {
+			what();
+		}
+		else {
+			var textArea = document.getElementById('speech-page-content');
+			datas[curmove] = tag;
+			curmove += 1;
+			if (curmove < moves.length) {
+				textArea.value='Recorded as "' + tag + '" Now please say: "' + moves[curmove] + '"';
+				
+				sleep(1000);
+				
+				var audio = new Audio();
+				audio.src ='http://translate.google.com/translate_tts?ie=utf-8&tl=en&q=' + moves[curmove];
+				audio.play();
+			}
+			else {
+				var data = '';
+				for (var i = 0; i < datas.length; i++) {
+					data += datas[i] + '\n';
+				}
+				textArea.value=data;
+			}
+		}
+	}
+	
+	if (annyang) {
+		var commands = {
+			'stop': stop,
+			'*search': read
+		}
+		
+		annyang.addCommands(commands);
+		annyang.start();
+	}
+	</script>
+	
+</head>
+<body>
+    <div id="main">
+        <div id="content">
+            <h1 id="about">Google Speech Recognition Example</h1>
+            <div id="example-type">textarea with JavaScript Web Speech API</div>
+            <div id="speech-content-elements">
+                <textarea id="speech-page-content" name="pageContent"></textarea>
+                <div class="speech-content-mic speech-mic"/>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
