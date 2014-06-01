@@ -23,18 +23,16 @@ module.exports = {
     var java = require('java');
     // console.log(java.classpath);
 
-    var MyClass = java.import('classifier.MyClass');
-    var string = MyClass.returnStringSync();
+    var input="kaniht to ay3";
+
+    var MyClass = java.import('classifier.MoveAnalyzer');
+    var analyzer = new MyClass();
+    analyzer.initSync();
+    var string = analyzer.classifyPieceSync(input);
+    var letter = analyzer.classifyLetterSync(input);
+    var number = analyzer.classifyNumberSync(input);
     console.log('Testing string: ');
-    console.log(string);
-
-    var list = MyClass.returnListSync();
-    console.log('Testing list: ');
-    console.log(list);
-
-    var result = MyClass.addNumbersSync(1, 2);
-    console.log('Testing java: ');
-    console.log(result);
+    console.log(string + " " + letter + " " + number);
 
     res.view();
   },

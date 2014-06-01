@@ -1,18 +1,25 @@
 #!/bin/bash
 
 HOME=$PWD
-
+REPO_FILES=$HOME/java/classifier
 CLASSIFIER=$HOME/node_modules/java/src-java/classifier
+
+JAVA_FILES=/home/david/Dropbox/workspace/ChessProject/src/classifier
+DATA_FILES=/home/david/Dropbox/workspace/ChessProject
 
 if [ ! -d $CLASSIFIER ]; then
    mkdir $CLASSIFIER
 fi
+
+cp $DATA_FILES/*.txt ./data/
 
 FILES_TEXT=""
 
 pushd .
 
 cd ./java/classifier
+
+cp $JAVA_FILES/* ./
 
 for file in *
 do
