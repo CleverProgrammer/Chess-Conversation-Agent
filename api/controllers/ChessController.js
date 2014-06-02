@@ -19,18 +19,20 @@ module.exports = {
     
   index : function(req, res) {
     var java = require('java');
+
+    
     // console.log(java.classpath);
 
-    var input="kaniht to ay3";
+    // var input="kaniht to ay3";
 
-    var MyClass = java.import('classifier.MoveAnalyzer');
-    var analyzer = new MyClass();
-    analyzer.initSync();
-    var string = analyzer.classifyPieceSync(input);
-    var letter = analyzer.classifyLetterSync(input);
-    var number = analyzer.classifyNumberSync(input);
-    console.log('Testing string: ');
-    console.log(string + " " + letter + " " + number);
+    // var MyClass = java.import('classifier.MoveAnalyzer');
+    // var analyzer = new MyClass();
+    // analyzer.initSync();
+    // var string = analyzer.classifyPieceSync(input);
+    // var letter = analyzer.classifyLetterSync(input);
+    // var number = analyzer.classifyNumberSync(input);
+    // console.log('Testing string: ');
+    // console.log(string + " " + letter + " " + number);
 
     res.view();
   },

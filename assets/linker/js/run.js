@@ -7,9 +7,13 @@ $(document).ready(function() {
   };
   var board = new ChessBoard('board', cfg);
 
+  // Annyang
+  // runAnnyang();
+
+  // Testing superagent
   superagent
     .get('/chess/')
     .end(function(res) {
-      console.log('hello');
+      console.log('Testing superagent...');
     });
 });

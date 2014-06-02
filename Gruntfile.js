@@ -61,6 +61,8 @@ module.exports = function (grunt) {
     'linker/js/bootstrap.js',
     'linker/js/chessboard-0.3.0.js',
     'linker/js/superagent.js',
+    'linker/js/annyang.js',
+    'linker/js/run-annyang.js',
 
     // All of the rest of your app scripts imported here
     'linker/**/*.js'
