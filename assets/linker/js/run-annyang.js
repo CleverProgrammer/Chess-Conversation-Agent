@@ -87,6 +87,14 @@ function setupAnnyang(game, board) {
     annyang.addCommands(chessCommands);
 
     // Start annyang
-    annyang.start();
+    startAnnyang();
   }
+};
+
+function startAnnyang() {
+  annyang.start();
+};
+
+function stopAnnyang() {
+  annyang.abort();
 }

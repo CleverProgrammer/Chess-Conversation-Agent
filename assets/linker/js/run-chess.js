@@ -6,8 +6,20 @@ function runChess() {
   var game = chessObject.game;
   var board = chessObject.board;
 
+  annyangStopped = false;
+
   // Setup annyang
   setupAnnyang(game, board);
+
+  $("#annyangButton").click(function() {
+    if (annyangStopped) {
+      startAnnyang();
+      annyangStopped = false;
+    } else {
+      stopAnnyang();
+      annyangStopped = true;
+    }
+  });
 
   // Add listener to moveButton
   $("#moveButton").click(function() {
