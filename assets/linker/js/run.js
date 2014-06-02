@@ -2,7 +2,7 @@ $(document).ready(function() {
   // Chessboard configuration
   var cfg = {
     draggable: true,
-    dropOffBoard: 'snapback',
+    dropOffBoard: 'trash',
     position: 'start'
   };
   var board = new ChessBoard('board', cfg);

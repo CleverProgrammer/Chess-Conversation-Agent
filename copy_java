@@ -4,10 +4,6 @@ HOME=$PWD
 
 CLASSIFIER=$HOME/node_modules/java/src-java/classifier
 
-if [ ! -d $CLASSIFIER ]; then
-   mkdir $CLASSIFIER
-fi
-
 FILES_TEXT=""
 
 pushd .
@@ -28,6 +24,11 @@ done
 echo javac $FILES_TEXT
 javac $FILES_TEXT
 
-cp *.class $CLASSIFIER/
+echo $CLASSIFIER/
+for file in *
+do 
+  echo $file
+  cp $file ... $CLASSIFIER/
+done
 
 popd
