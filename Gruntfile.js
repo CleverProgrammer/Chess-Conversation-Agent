@@ -59,8 +59,10 @@ module.exports = function (grunt) {
     // *->    put other dependencies here   <-*
     'linker/js/jquery-2.1.1.js',
     'linker/js/bootstrap.js',
-    'linker/js/chessboard-0.3.0.js',
     'linker/js/superagent.js',
+    'linker/js/chess.js',
+    'linker/js/chessboard-0.3.0.js',
+    'linker/js/run-chess.js',
     'linker/js/annyang.js',
     'linker/js/run-annyang.js',
 
