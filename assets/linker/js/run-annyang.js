@@ -91,10 +91,14 @@ function setupAnnyang(game, board) {
   }
 };
 
+// Helper to start annyang
 function startAnnyang() {
   annyang.start();
+  annyangStopped = false;
 };
 
+// Helper to stop annyang
 function stopAnnyang() {
   annyang.abort();
+  annyangStopped = true;
 }

@@ -1,34 +1,31 @@
 function runChess() {
-  // Setup chess
-  var chessObject = setupChess();
+  async.waterfall([
+    // Setup chess
+    function(callback) {
+      // Setup chess and chessboard
+      callback(null, setupChess());
+    },
+    // Setup annyang
+    function(chessObject, callback) {
+      // Get game and board
+      var game = chessObject.game;
+      var board = chessObject.board;
 
-  // Get game and board
-  var game = chessObject.game;
-  var board = chessObject.board;
-
-  annyangStopped = false;
-
-  // Setup annyang
-  setupAnnyang(game, board);
-
-  $("#annyangButton").click(function() {
-    if (annyangStopped) {
-      startAnnyang();
+      // Setup annyang
       annyangStopped = false;
-    } else {
-      stopAnnyang();
-      annyangStopped = true;
+      setupAnnyang(game, board);
+
+      callback(null, null);
+    },
+    // Setup buttons
+    function(nothing, callback) {
+      setupButtons();
+
+      callback(null, null);
     }
-  });
-
-  // Add listener to moveButton
-  $("#moveButton").click(function() {
-    // Get move from moveInput
-    var move = $("#moveInput").val();
-    console.log(move);
-
-    // Display move on board
-    board.move(move);
+  ],
+  function(err, result) {
+    // DONE
   });
 }
 
