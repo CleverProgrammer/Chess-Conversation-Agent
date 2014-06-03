@@ -1,0 +1,46 @@
+#!/bin/bash
+
+HOME=$PWD
+REPO_FILES=$HOME/java/classifier
+CLASSIFIER=$HOME/node_modules/java/src-java/classifier
+DATA_FILES=$HOME/data
+
+JAVA_DATA=/home/david/Dropbox/workspace/ChessProject/data
+JAVA_FILES=/home/david/Dropbox/workspace/ChessProject/src/classifier
+
+FILES_TEXT=""
+
+cp $JAVA_DATA/* $DATA_FILES/
+cp $JAVA_FILES/* $REPO_FILES/
+
+pushd .
+
+cd ./java/classifier
+
+cp $JAVA_FILES/* ./
+
+for file in *
+do
+   if [[ -f $file ]]; then
+      extension="${file##*.}"
+
+      if [ $extension == "java" ]; then
+         FILES_TEXT="$file $FILES_TEXT"
+      fi
+   fi
+done
+
+echo javac $FILES_TEXT
+javac $FILES_TEXT
+
+echo $CLASSIFIER/
+for file in *
+do 
+  extension="${file##*.}"
+
+  if [ $extension == "class" ]; then
+      cp $file $CLASSIFIER/
+  fi
+done
+
+popd

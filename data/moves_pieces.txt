@@ -1,0 +1,49 @@
+king : king
+queen : queen
+bishop : bishop
+knight : knight
+rook : rook
+castle : rook
+pawn : pawn
+king        : king
+queen		: queen
+Bishop      : bishop
+night       : knight
+rook        : rook
+Castle      : rook
+porn        : pawn
+King		: king
+queen       : queen
+Bishop      : bishop
+night       : knight
+Brooks      : rook
+Castle      : rook
+porn        : pawn
+midget king			: king
+Makeda Queen        : queen
+make it a picture   : bishop
+make it a night     : knight
+make it rock        : rook
+make it a castle    : rook
+make a porn         : pawn
+make it a king		: king
+Makeda Queen		: queen
+making a bishop     : bishop
+make it tonight     : knight
+naked arrow         : rook
+naked cast          : rook
+missionary porn     : pawn
+make it a king		: king
+make a queen        : queen
+midget a bishop     : bishop
+make it tonight     : knight
+make it a brook     : rook
+Nikita Castle       : rook
+making a porn       : pawn
+I'll take a king	: king
+I take a queen      : queen
+Opteka fisheye      : bishop
+I'll take a night   : knight
+I'll take a brook   : rook
+how to get a title  : rook
+Ulta coupon         : pawn
