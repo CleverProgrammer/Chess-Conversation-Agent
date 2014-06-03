@@ -61,6 +61,9 @@ ChessClass.setupChess = function() {
     'K': 'king'
   };
 
+  // Set current player to white
+  BoardClass.player = 'w';
+
   var game = new Chess();
 
   // Chessboard configuration
@@ -134,7 +137,7 @@ ChessClass.classifyMove = function(input, callback) {
     .end(function(res) {
       var output = res.body.output;
 
-      console.log('# Returned move...');
+      console.log('# Classifier returned move...');
       console.log(output);
 
       // Check if [MOVE] or [CASTLE] or [?]
@@ -186,7 +189,7 @@ ChessClass.processMove = function(move) {
         // [?]
         // Prompt user again
         AnnyangClass.promptUser('Move not recognized. Please try again...');
-        console.log('FAILURE TO PROCESS - ' + term);
+        console.log('FAILURE TO RECOGNIZE');
       } // else if (move === '[AMBIGUOUS]') {
         // console.log('AMBIGUITY');
         // }
@@ -257,12 +260,13 @@ ChessClass.processCastleOutput = function(output) {
 
 // Check for possible capture
 ChessClass.checkCapture = function(piece, letter, number) {
-  console.log(piece + letter + number);
+  console.log('# Checking capture');
+  // console.log(piece + letter + number);
   var captureMoves = [];
 
   // Get all legal moves
   var legalMoves = ChessClass.game.moves();
-  console.log(legalMoves);
+  // console.log(legalMoves);
 
   // Check each legal move for 'x#{letter]#{number}' near the end
   for (var i = 0; i < legalMoves.length; i++) {
