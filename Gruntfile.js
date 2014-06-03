@@ -65,6 +65,7 @@ module.exports = function (grunt) {
     'linker/js/chessboard-0.3.0.js',
     'linker/js/annyang.js',
     'linker/js/run-chess.js',
+    'linker/js/run-board.js',
     'linker/js/run-buttons.js',
     'linker/js/run-annyang.js',
     'linker/js/run.js',

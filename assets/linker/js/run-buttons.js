@@ -1,9 +1,11 @@
-function setupButtons() {
+function ButtonClass() {}
+
+ButtonClass.setupButtons = function() {
   $("#annyangButton").click(function() {
-    if (annyangStopped) {
-      startAnnyang();
+    if (AnnyangClass.annyangStopped) {
+      AnnyangClass.startAnnyang();
     } else {
-      stopAnnyang();
+      AnnyangClass.stopAnnyang();
     }
   });
 

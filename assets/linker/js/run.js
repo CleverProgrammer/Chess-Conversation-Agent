@@ -1,6 +1,6 @@
 $(document).ready(function() {
   // Chess
-  runChess();
+  ChessClass.runChess();
 
   // Testing superagent
   superagent

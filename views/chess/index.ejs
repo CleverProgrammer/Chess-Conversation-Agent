@@ -8,9 +8,10 @@
   </div>
   <div class="row">
     <div class="col-md-1"></div>
-    <div class="col-md-6">
+    
+    <div class="col-md-5">
       <!-- Chessboard -->
-      <div id="board" style="width: 400px"></div>
+      <div id="board"></div>
 
       <!-- Chessboard controls -->
       <form class="form-inline" role="form">
@@ -20,9 +21,16 @@
         </div>
         <button id="moveButton" type="button" class="btn btn-default">Move</button>
       </form>
-    </div>
-    <div class="col-md-5">
       <button id="annyangButton" type="button" class="btn btn-default">Toggle Annyang</button>
     </div>
+
+    <div class="col-md-5">
+      <!-- Conversation board -->
+      <h3>Conversation Board</h3>  
+      <table id="conversationBoard" class="table">
+      </table>
+    </div>
+
+    <div class="col-md-1"></div>
   </div>
 </div>

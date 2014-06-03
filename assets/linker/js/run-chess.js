@@ -1,9 +1,11 @@
-function runChess() {
+function ChessClass() {}
+
+ChessClass.runChess = function() {
   async.waterfall([
     // Setup chess
     function(callback) {
       // Setup chess and chessboard
-      callback(null, setupChess());
+      callback(null, ChessClass.setupChess());
     },
     // Setup annyang
     function(chessObject, callback) {
@@ -12,14 +14,21 @@ function runChess() {
       var board = chessObject.board;
 
       // Setup annyang
-      annyangStopped = false;
-      setupAnnyang(game, board);
+      AnnyangClass.annyangStopped = false;
+      AnnyangClass.setupAnnyang(game, board);
+
+      callback(null, null);
+    },
+    // Setup conversation board
+    function(nothing, callback) {
+      // Setup conversation board
+      BoardClass.setupBoard();
 
       callback(null, null);
     },
     // Setup buttons
     function(nothing, callback) {
-      setupButtons();
+      ButtonClass.setupButtons();
 
       callback(null, null);
     }
@@ -29,7 +38,7 @@ function runChess() {
   });
 }
 
-function setupChess() {
+ChessClass.setupChess = function() {
   var game = new Chess();
 
   // Chessboard configuration
