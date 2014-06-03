@@ -3,8 +3,15 @@
 HOME=$PWD
 REPO_FILES=$HOME/java/classifier
 CLASSIFIER=$HOME/node_modules/java/src-java/classifier
+DATA_FILES=$HOME/data
+
+JAVA_DATA=/home/david/workspace/ChessProject/data
+JAVA_FILES=/home/david/workspace/ChessProject/src/classifier
 
 FILES_TEXT=""
+
+cp JAVA_DATA/* DATA_FILES/
+cp JAVA_FILES/* REPO_FILES/
 
 pushd .
 
@@ -30,7 +37,7 @@ echo $CLASSIFIER/
 for file in *
 do 
   echo $file
-  cp $file ... $CLASSIFIER/
+  cp $file $CLASSIFIER/
 done
 
 popd
