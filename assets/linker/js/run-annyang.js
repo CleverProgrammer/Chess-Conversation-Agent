@@ -1,100 +1,29 @@
 function AnnyangClass() {}
 
 // Setting up and running annyang
-AnnyangClass.setupAnnyang = function(game, board) {
-  if (annyang && game && board) {
-    // Define LETTERS constant
-    var LETTERS = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
-
-    // Define NUMBERS constant
-    var NUMBERS = ['1', '2', '3', '4', '5', '6', '7', '8'];
-
+AnnyangClass.setupAnnyang = function() {
+  if (annyang) {
     // Define commands
     var chessCommands = {
       'hello' : function() {
         console.log('Hello!');
         BoardClass.addUserLine('Hello!');
       },
-      'pawn (to) *term' : function(term) {
-        console.log(term);
-        var split = term.split(' ');
-        if (split.length == 2) {
-          console.log('Has two terms');
-          var letter = split[0].toLowerCase();
-          var number = split[1].toLowerCase();
-          if ($.inArray(letter, LETTERS) !== -1 && 
-            $.inArray(number, NUMBERS) !== -1) {
-            var moveString = letter + number;
-            console.log(moveString);
-            var move = game.move(letter + number);
-          }
-        } else {
-          var move = game.move(term);
-        }
-        if (move) {
-          console.log('Move succesful!');
-          board.position(game.fen());
-          BoardClass.addUserMove(move);
-        }
-      },
-      'rook (to) *term' : function(term) {
-        console.log(term);
-        var move = game.move('R' + term);
-        if (move) {
-          console.log('Move succesful!');
-          board.position(game.fen());
-          BoardClass.addUserMove(move);
-        } 
-      },
-      'knight (to) *term' : function(term) {
-        console.log(term);
-        var move = game.move('N' + term);
-        if (move) {
-          console.log('Move succesful!');
-          board.position(game.fen());
-          BoardClass.addUserMove(move);
-        } 
-      },
-      'night (to) *term' : function(term) {
-        console.log(term);
-        var move = game.move('N' + term);
-        if (move) {
-          console.log('Move succesful!');
-          board.position(game.fen());
-          BoardClass.addUserMove(move);
-        } 
-      },
-      'bishop (to) *term' : function(term) {
-        console.log(term);
-        var move = game.move('B' + term);
-        if (move) {
-          console.log('Move succesful!');
-          board.position(game.fen());
-          BoardClass.addUserMove(move);
-        }
-      },
-      'queen (to) *term' : function(term) {
-        console.log(term);
-        var move = game.move('Q' + term);
-        if (move) {
-          console.log('Move succesful!');
-          board.position(game.fen());
-          BoardClass.addUserMove(move);
-        } 
-      },
-      'king (to) *term' : function(term) {
-        console.log(term);
-        var move = game.move('K' + term);
-        if (move) {
-          console.log('Move succesful!');
-          board.position(game.fen());
-          BoardClass.addUserMove(move);
-        } 
-      },
-      '*term' : function(term) {
-        console.log(term);
-        BoardClass.addUserLine(term);
-      }
+      'pawn (to) *term' : AnnyangClass.pawnMoveCommand,
+      'pawn (takes) *term' : AnnyangClass.pawnMoveCommand,
+      'rook (to) *term' : AnnyangClass.rookMoveCommand,
+      'rook (takes) *term': AnnyangClass.rookMoveCommand,
+      'knight (to) *term' : AnnyangClass.knightMoveCommand,
+      'knight (takes) *term' : AnnyangClass.knightMoveCommand,
+      'night (to) *term' : AnnyangClass.knightMoveCommand,
+      'night (takes) *term' : AnnyangClass.knightMoveCommand,
+      'bishop (to) *term' : AnnyangClass.bishopMoveCommand,
+      'bishop (takes) *term' : AnnyangClass.bishopMoveCommand,
+      'queen (to) *term' : AnnyangClass.queenMoveCommand,
+      'queen (takes) *term' : AnnyangClass.queenMoveCommand,
+      'king (to) *term' : AnnyangClass.kingMoveCommand,
+      'king (takes) *term' : AnnyangClass.kingMoveCommand,
+      '*term' : AnnyangClass.unknownCommand
     }
 
     // Add commands to annyang
@@ -104,6 +33,152 @@ AnnyangClass.setupAnnyang = function(game, board) {
     AnnyangClass.startAnnyang();
   }
 };
+
+// Pawn move command
+AnnyangClass.pawnMoveCommand = function(term) {
+  console.log(term);
+  var move = ChessClass.returnMoveFromTerm('pawn', term);
+  if (!move) {
+    async.series({
+      // Hit classifier backend on '{#pieceName} *term' move
+      pawn : function(callback) { 
+        ChessClass.classifyMove('pawn ' + term, callback);
+      }
+    },
+    function(err, results) {
+      move = results.pawn;
+      ChessClass.processMove(move);
+    });  
+  } else {
+    ChessClass.processMove(move);
+  }
+}
+
+// Rook move command
+AnnyangClass.rookMoveCommand = function(term) {
+  console.log(term);
+  var move = ChessClass.returnMoveFromTerm('rook', term);
+  if (!move) {
+    async.series({
+      // Hit classifier backend on '{#pieceName} *term' move
+      rook : function(callback) { 
+        ChessClass.classifyMove('rook ' + term, callback);
+      }
+    },
+    function(err, results) {
+      move = results.rook;
+      ChessClass.processMove(move);
+    });  
+  } else {
+    ChessClass.processMove(move);
+  }
+}
+
+// Knight move command
+AnnyangClass.knightMoveCommand = function(term) {
+  console.log(term);
+  var move = ChessClass.returnMoveFromTerm('knight', term);
+  if (!move) {
+    async.series({
+      // Hit classifier backend on '{#pieceName} *term' move
+      knight : function(callback) { 
+        ChessClass.classifyMove('knight ' + term, callback);
+      }
+    },
+    function(err, results) {
+      move = results.knight;
+      ChessClass.processMove(move);
+    });  
+  } else {
+    ChessClass.processMove(move);    
+  }
+}
+
+// Bishop move command
+AnnyangClass.bishopMoveCommand = function(term) {
+  console.log(term);
+  var move = ChessClass.returnMoveFromTerm('bishop', term);
+  if (!move) {
+    async.series({
+      // Hit classifier backend on '{#pieceName} *term' move
+      bishop : function(callback) { 
+        ChessClass.classifyMove('bishop ' + term, callback);
+      }
+    },
+    function(err, results) {
+      move = results.bishop;
+      ChessClass.processMove(move);
+    });  
+  } else {
+    ChessClass.processMove(move);
+  }
+}
+
+// Queen move command
+AnnyangClass.queenMoveCommand = function(term) {
+  console.log(term);
+  var move = ChessClass.returnMoveFromTerm('queen', term);
+  if (!move) {
+    async.series({
+      // Hit classifier backend on '{#pieceName} *term' move
+      queen : function(callback) { 
+        ChessClass.classifyMove('queen ' + term, callback);
+      }
+    },
+    function(err, results) {
+      move = results.queen;
+      ChessClass.processMove(move);
+    });  
+  } else {
+    ChessClass.processMove(move);
+  }
+}
+
+// King move command
+AnnyangClass.kingMoveCommand = function(term) {
+  console.log(term);
+  var move = ChessClass.returnMoveFromTerm('king', term);
+  if (!move) {
+    async.series({
+      // Hit classifier backend on '{#pieceName} *term' move
+      king : function(callback) { 
+        ChessClass.classifyMove('king ' + term, callback);
+      }
+    },
+    function(err, results) {
+      move = results.king;
+      ChessClass.processMove(move);
+    });  
+  } else {
+    ChessClass.processMove(move);
+  }
+}
+
+// Unknown command
+AnnyangClass.unknownCommand = function(term) {
+  console.log('UNKNOWN - ' + term);
+  async.series({
+    // Hit classifier backend on '{#pieceName} *term' move
+    unknown : function(callback) { 
+      ChessClass.classifyMove(term, callback);
+    }
+  },
+  function(err, results) {
+    var move = results.unknown;
+    ChessClass.processMove(move);
+  });  
+}
+
+// Helper to prompt user with message
+AnnyangClass.promptUser = function(message) {
+  console.log(message);
+}
+
+// Helper to prompt user for piece
+AnnyangClass.promptUserForPiece = function(piece) {
+  var pieceName = ChessClass.REVERSE_PIECE_MAP[piece];
+  console.log('Which ' + pieceName + ' are you referring to?'); 
+}
 
 // Helper to start annyang
 AnnyangClass.startAnnyang = function() {
