@@ -5,13 +5,13 @@ REPO_FILES=$HOME/java/classifier
 CLASSIFIER=$HOME/node_modules/java/src-java/classifier
 DATA_FILES=$HOME/data
 
-JAVA_DATA=/home/david/workspace/ChessProject/data
-JAVA_FILES=/home/david/workspace/ChessProject/src/classifier
+JAVA_DATA=/home/david/Dropbox/workspace/ChessProject/data
+JAVA_FILES=/home/david/Dropbox/workspace/ChessProject/src/classifier
 
 FILES_TEXT=""
 
-cp JAVA_DATA/* DATA_FILES/
-cp JAVA_FILES/* REPO_FILES/
+cp $JAVA_DATA/* $DATA_FILES/
+cp $JAVA_FILES/* $REPO_FILES/
 
 pushd .
 
@@ -36,8 +36,11 @@ javac $FILES_TEXT
 echo $CLASSIFIER/
 for file in *
 do 
-  echo $file
-  cp $file $CLASSIFIER/
+  extension="${file##*.}"
+
+  if [ $extension == "class" ]; then
+      cp $file $CLASSIFIER/
+  fi
 done
 
 popd

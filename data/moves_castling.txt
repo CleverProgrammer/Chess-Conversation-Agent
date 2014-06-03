@@ -1,0 +1,2 @@
+Castle Queen side : queen
+Castle King side : king
