@@ -103,7 +103,8 @@ abstract public class AbstractClassifier {
 	/**********************************************************************************************
 	* Classifier Evaluation
 	**********************************************************************************************/
-   enum EvalResult { NODATA, INCORRECT, CORRECT }
+
+   enum EvalResult { NODATA, REPEAT, INCORRECT, CORRECT }
    
    /* Evaluate a single line from a set of labeled data lines
     * Returns: 
@@ -111,34 +112,44 @@ abstract public class AbstractClassifier {
     *    INCORRECT : Classifier incorrect
     *    CORRECT   : Classifier correct 
     */
-   abstract protected EvalResult evaluateLine(String line, boolean verbose);
+   abstract protected EvalResult evaluateLine(String line, int v);
    
-   protected double evaluateLines(List<String> lines) { return evaluateLines(lines, false); }
-	protected double evaluateLines(List<String> lines, boolean verbose) {
+   protected List<Triplet> evaluateLines(List<String> lines) { return evaluateLines(lines, 1); }
+	protected List<Triplet> evaluateLines(List<String> lines, int v) {
       int numCorrect = 0;
+      int numUnknown = 0;
       int F = 0;
       
       for (String line : lines) {
-         EvalResult result = evaluateLine(line, verbose);
+         EvalResult result = evaluateLine(line, v);
          if (result != EvalResult.NODATA) {
             F += 1;
             
             if (result == EvalResult.CORRECT) { numCorrect += 1; }
+            if (result == EvalResult.REPEAT)  { numUnknown += 1; }
          }
       }  
       
+      List<Triplet> out = new ArrayList<Triplet>();
+       
+      logln("Summary:\n-----------", v >= 1);
+      double correct = 100 * ( (double)numCorrect) / F;
+      logln(correct + "% correct (" + numCorrect + "/" + F + ")", v >= 1);
+      double incorrect = 100 * ((double) (F - numCorrect) - numUnknown) / F;
+      logln(incorrect + "% incorrect (" + ((F - numCorrect) - numUnknown) + "/" + F + ")", v >= 1);
       
-      logln("Summary:\n-----------");
-      double acc = 100 * ( (double)numCorrect) / F;
-      logln(acc + "% accurate (" + numCorrect + "/" + F + ")");
+      double unknown = 100 * ((double) numUnknown) / F;
+      logln(unknown + "% repeat requested (" + numUnknown + "/" + F + ")", v >= 1);
       
-      return acc;
+      out.add(new Triplet(correct, incorrect, unknown));
+      
+      return out;
 	}
 	
-	public double evaluate(String filename) throws IOException 
-	{ return evaluateLines(readLines(filename), false); }
+	public List<Triplet> evaluate(String filename) throws IOException 
+	{ return evaluateLines(readLines(filename), 1); }
 	
-	public double evaluate(String filename, boolean verbose) throws IOException 
-	{ return evaluateLines(readLines(filename), verbose); }
+	public List<Triplet> evaluate(String filename, int verbosity) throws IOException 
+	{ return evaluateLines(readLines(filename), verbosity); }
 	
 }

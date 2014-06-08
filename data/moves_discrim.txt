@@ -171,7 +171,6 @@ mothership 22                                       					: move
 2x3                                                 					: move
 move my bishop 2014                                 					: move
 move my bishop 25                                   					: move
-uf6                                                 					: move                                                  					: move7
 is my bishop too fat                                					: move
 who is my bishop the g1                             					: move
 move my bishop to g2                                					: move
@@ -1773,3 +1772,4 @@ Contour HD pics        : move
 1288                   : move
 Castle Queen side 	: castle
 Castle King side 	: castle
+castle				: castle

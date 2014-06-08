@@ -1,8 +1,5 @@
 package classifier;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +23,8 @@ public abstract class Classifier<LABEL> extends AbstractClassifier {
 	
 	abstract public Classification<LABEL> classify(String input, boolean verbose);
 	public Classification<LABEL> classify(String input) { return classify(input, false); }
+	
+	abstract public boolean isUnknown(Classification<LABEL> output);
 	
    /**********************************************************************************************
    * Constructors
@@ -58,7 +57,8 @@ public abstract class Classifier<LABEL> extends AbstractClassifier {
 	        }
 	        trainLines(trainingLines, false);
 	        
-	        double score = evaluateLines(testingLines);
+	        List<Triplet> out = evaluateLines(testingLines);
+	        double score = out.get(0).d1;
 	        System.out.println("Fold " + i + " (train: " + trainingLines.size() + " test: "
 	                              + testingLines.size()+") score: " + score);
 	        aggregateScore += score;
@@ -79,18 +79,24 @@ public abstract class Classifier<LABEL> extends AbstractClassifier {
     *    INCORRECT : Classifier incorrect
     *    CORRECT   : Classifier correct 
     */
-	protected EvalResult evaluateLine(String line, boolean verbose) {
+	@Override
+	protected EvalResult evaluateLine(String line, int v) {
 		LABEL gold_label = parseLabel(line);
          
 		if (gold_label != null) {
-			LABEL eval_label = classifyLabeled(line).result;
+		   Classification<LABEL> classif = classifyLabeled(line);
+			LABEL eval_label = classif.result;
 			
 			if (!eval_label.equals(gold_label)) {
-				if (verbose)
+				if (v >= 2)
 					classifyLabeled(line, true);
 	
-				logln("Input: " + line + " (Gold Label: " + gold_label + ")", verbose);
-				logln("Output: " + eval_label + "\n", verbose);
+				logln("Input: " + line + " (Gold Label: " + gold_label + ")", v >= 2);
+				logln("Output: " + eval_label + "\n", v >= 2);
+				
+				if (isUnknown(classif))
+				   return EvalResult.REPEAT;
+				
 				return EvalResult.INCORRECT;
 			}
 			else

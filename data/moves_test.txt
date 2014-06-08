@@ -1,0 +1,448 @@
+King 281										: king to a1
+King 282	                                    : king to a2
+King 283                                        : king to a3
+King to a 4                                     : king to a4
+King 285                                        : king to a5
+King to a 6                                     : king to a6
+King 287                                        : king to a7
+King 288                                        : king to a8
+King tobeone                                    : king to b1
+King 2 B 2                                      : king to b2
+King 2b 3                                       : king to b3
+King 2b 4                                       : king to b4
+King 2b 5                                       : king to b5
+kinky sex                                       : king to b6
+King 2b 7                                       : king to b7
+King 2b 8                                       : king to b8
+teen to see one                                 : king to c1
+cinta si tu                                     : king to c2
+King 2 C 3                                      : king to c3
+King 2 c4                                       : king to c4
+King to c5									    : king to c5
+King to c6                                      : king to c6
+King 2 season                                   : king to c7
+King to ca                                      : king to c8
+King to the one							        : king to d1
+Quinta de tu                                    : king to d2
+King 2 d3                                       : king to d3
+King to d4                                      : king to d4
+King 2 t5                                       : king to d5
+King 26                                         : king to d6
+King 227                                        : king to d7
+King 2                                          : king to d8
+King 2 ep 1                                     : king to e1
+King 2 e2                                       : king to e2
+King 2 e3                                       : king to e3
+King 2 E 4                                      : king to e4
+King 2.5                                        : king to e5
+King to e6                                      : king to e6
+King to e7                                      : king to e7
+thing to eat                                    : king to e8
+King to f1                                      : king to f1
+King 2 f2                                       : king to f2
+King to s3                                      : king to f3
+King to s4                                      : king to f4
+King 2 X 5                                      : king to f5
+Kingda f6                                       : king to f6
+King 287                                        : king to f7
+can 2x8                                         : king to f8
+team toochie 1                                  : king to g1
+King 2 g2                                       : king to g2
+King George 3                                   : king to g3
+King to g4                                      : king to g4
+Cantu g5                                        : king to g5
+Kingda g6                                       : king to g6
+King to g7                                      : king to g7
+Canton GA                                       : king to g8
+King 281                                        : king to h1
+King 2 h2                                       : king to h2
+teen to h3                                      : king to h3
+King 2 H 4                                      : king to h4
+Kings h5                                        : king to h5
+King 2 H 6                                      : king to h6
+King 287                                        : king to h7
+King to AJ                                      : king to h8
+Queen 281                                       : queen to a1
+Queen 282                                       : queen to a2
+clean 283                                       : queen to a3
+Queen 284                                       : queen to a4
+Queen 285                                       : queen to a5
+2286                                            : queen to a6
+Queen 287                                       : queen to a7
+Queen 28                                        : queen to a8
+tobeone                                         : queen to b1
+Quinta B 2                                      : queen to b2
+Queen to be 3                                   : queen to b3
+Queen to be 4                                   : queen to b4
+Queen to be 5                                   : queen to b5
+Quinta B 6                                      : queen to b6
+Queen to be 7                                   : queen to b7
+Queen to be a                                   : queen to b8
+Queen 2c1                                       : queen to c1
+Queen to c2                                     : queen to c2
+Queen to see                                    : queen to c3
+Queen to c4                                     : queen to c4
+Queen to c5                                     : queen to c5
+Queen to c6                                     : queen to c6
+cream to CSUN                                   : queen to c7
+Quinta CA                                       : queen to c8
+Queen to d1                                     : queen to d1
+clean 22                                        : queen to d2
+Quinta de 3                                     : queen to d3
+Queen to d4                                     : queen to d4
+Quinta de 5                                     : queen to d5
+Quinta de 6                                     : queen to d6
+Quinta de 7                                     : queen to d7
+28                                              : queen to d8
+when to Yvonne                                  : queen to e1
+clean to eat                                    : queen to e2
+when to e3                                      : queen to e3
+clean to e4                                     : queen to e4
+Queen to e5                                     : queen to e5
+Ben to ep 6                                     : queen to e6
+Queen to e7                                     : queen to e7
+Queen to eat                                    : queen to e8
+cream to f1                                     : queen to f1
+Queen to after                                  : queen to f2
+Quinta s3                                       : queen to f3
+Queen 2x4                                       : queen to f4
+Queen to f5                                     : queen to f5
+Queen to f6                                     : queen to f6
+Pinterest 7                                     : queen to f7
+Queen too fat                                   : queen to f8
+cream to g1                                     : queen to g1
+Queen to g2                                     : queen to g2
+Queen to g3                                     : queen to g3
+Queen to d4                                     : queen to g4
+Quinta G 5                                      : queen to g5
+Queen to g6                                     : queen to g6
+g7                                              : queen to g7
+Queen to g-8                                    : queen to g8
+clean 281                                       : queen to h1
+when to h2                                      : queen to h2
+clean to h3                                     : queen to h3
+Queen to h4                                     : queen to h4
+Queen 285                                       : queen to h5
+Queen 286                                       : queen to h6
+Queen to h7                                     : queen to h7
+Queen to HH                                     : queen to h8
+Brooks 281										: rook to a1
+282                                             : rook to a2
+Brooke 283                                      : rook to a3
+284                                             : rook to a4
+Brooke 285                                      : rook to a5
+Brooke 286                                      : rook to a6
+Brooke 287                                      : rook to a7
+Brooke 288                                      : rook to a8
+to be one                                       : rook to b1
+rook to be to                                   : rook to b2
+rook 2 b3                                       : rook to b3
+Brooke to be 4                                  : rook to b4
+Brooke to be 5                                  : rook to b5
+Brooks to be 6                                  : rook to b6
+Brooks to be 7                                  : rook to b7
+rook to be 8                                    : rook to b8
+Brooke 281                                      : rook to c1
+ruptured c2                                     : rook to c2
+rook 2 C 3                                      : rook to c3
+Brooke to c4                                    : rook to c4
+Rick to c5                                      : rook to c5
+look to see 6                                   : rook to c6
+Rick to c7                                      : rook to c7
+look to see it                                  : rook to c8
+Brooke to d1                                    : rook to d1
+rota d2                                         : rook to d2
+Brooke D 3                                      : rook to d3
+rIP to the 4                                    : rook to d4
+Rock City 5                                     : rook to d5
+Brooks d6                                       : rook to d6
+Mehdy 7                                         : rook to d7
+Brooke 2ds                                      : rook to d8
+look to even                                    : rook to e1
+rook to e2                                      : rook to e2
+rook to e3                                      : rook to e3
+rook to e4                                      : rook to e4
+5                                               : rook to e5
+book 2 ep 6                                     : rook to e6
+Brooke to e7                                    : rook to e7
+rook 2 e8                                       : rook to e8
+Brooke to f1                                    : rook to f1
+Brooke to f2                                    : rook to f2
+Brooke s3                                       : rook to f3
+Brooke to s4                                    : rook to f4
+Brooke 2x+5                                     : rook to f5
+Brook Essex                                     : rook to f6
+Brooks f7                                       : rook to f7
+Brooke to fat                                   : rook to f8
+Brooke 231                                      : rook to g1
+Brooke to g2                                    : rook to g2
+Brooke to g3                                    : rook to g3
+4                                               : rook to g4
+Dr G 5                                          : rook to g5
+Brooks gt6                                      : rook to g6
+7                                               : rook to g7
+Brooke to g-8                                   : rook to g8
+Brooke 281                                      : rook to h1
+Brooke 2h2                                      : rook to h2
+Brooke to h3                                    : rook to h3
+284                                             : rook to h4
+Brooke 285                                      : rook to h5
+Brooke 286                                      : rook to h6
+Brooks h7                                       : rook to h7
+h8                                              : rook to h8
+district 81										: bishop to a1
+282                                             : bishop to a2
+Bishop 283                                      : bishop to a3
+Bishop to 84                                    : bishop to a4
+Bishop to 85                                    : bishop to a5
+Bishop 286                                      : bishop to a6
+Bishop to a 7                                   : bishop to a7
+Bishop to 88                                    : bishop to a8
+Bishop to be one                                : bishop to b1
+ship to be to                                   : bishop to b2
+ship to the 3                                   : bishop to b3
+Bishop to be 4                                  : bishop to b4
+ship to the 5                                   : bishop to b5
+Bishop to be 6                                  : bishop to b6
+ship to the 7                                   : bishop to b7
+Bishop to be 8                                  : bishop to b8
+Bishop to see one                               : bishop to c1
+Bishop to c2                                    : bishop to c2
+ship to CT                                      : bishop to c3
+Bishop to c4                                    : bishop to c4
+Bishop to c5                                    : bishop to c5
+Bishop to c6                                    : bishop to c6
+Bishop to season                                : bishop to c7
+Bishop ca                                       : bishop to c8
+ship to d1                                      : bishop to d1
+Bishop to d2                                    : bishop to d2
+Bishop TD 3                                     : bishop to d3
+Bishop to d4                                    : bishop to d4
+Bishop to d5                                    : bishop to d5
+HD sex                                          : bishop to d6
+Bishop TD 7                                     : bishop to d7
+Bishop TD 8                                     : bishop to d8
+51                                              : bishop to e1
+fish to eat                                     : bishop to e2
+Bishop to e3                                    : bishop to e3
+specialty for                                   : bishop to e4
+Shiki 5                                         : bishop to e5
+Bishop to e6                                    : bishop to e6
+Bishop to e7                                    : bishop to e7
+ship to eat                                     : bishop to e8
+f1                                              : bishop to f1
+f2                                              : bishop to f2
+2x3                                             : bishop to f3
+f4                                              : bishop to f4
+Bishop J 45                                     : bishop to f5
+Bishop Topix                                    : bishop to f6
+the ship to f7                                  : bishop to f7
+ship to fat                                     : bishop to f8
+Digimon                                         : bishop to g1
+g2                                              : bishop to g2
+Bishop to g3                                    : bishop to g3
+Bishop to g4                                    : bishop to g4
+ship to g5                                      : bishop to g5
+Bishop to g6                                    : bishop to g6
+Bishop to g7                                    : bishop to g7
+s*** GA                                         : bishop to g8
+Bishop to 81                                    : bishop to h1
+Bishop to h2                                    : bishop to h2
+shipped h3                                      : bishop to h3
+mission to 84                                   : bishop to h4
+Bishop to age 5                                 : bishop to h5
+Triple H sex                                    : bishop to h6
+ship to h7                                      : bishop to h7
+Bishop th8                                      : bishop to h8
+Castle to 81									: rook to a1
+Castle tattoo                                   : rook to a2
+Castle to a3                                    : rook to a3
+Castle to a4                                    : rook to a4
+Castle 285                                      : rook to a5
+Castle to a6                                    : rook to a6
+Castle de 7                                     : rook to a7
+Castleton State                                 : rook to a8
+Castle TV one                                   : rook to b1
+Castle to be to                                 : rook to b2
+Castle TV 3                                     : rook to b3
+Castle to be 4                                  : rook to b4
+Castleton 5                                     : rook to b5
+Castle TV 6                                     : rook to b6
+Castle to be 7                                  : rook to b7
+Castle TV 8                                     : rook to b8
+Castleton c1                                    : rook to c1
+Castle to c2                                    : rook to c2
+Castleton                                       : rook to c3
+taxi 4                                          : rook to c4
+Castle 55                                       : rook to c5
+Castle to c6                                    : rook to c6
+Castle season                                   : rook to c7
+Castle to sedate                                : rook to c8
+Castle to d1                                    : rook to d1
+kill the DJ                                     : rook to d2
+Castle TD 3                                     : rook to d3
+Castle TD 4                                     : rook to d4
+Castle TD 5                                     : rook to d5
+custom 56                                       : rook to d6
+cassadee 7                                      : rook to d7
+Catholic debate                                 : rook to d8
+Castle TV one                                   : rook to e1
+Castle TV 2                                     : rook to e2
+Castle de                                       : rook to e3
+Castle TV 4                                     : rook to e4
+Castle TD 5                                     : rook to e5
+Castle TX                                       : rook to e6
+Castle TV 7                                     : rook to e7
+Castle de ATH                                   : rook to e8
+Castle to f1                                    : rook to f1
+Castleton f2                                    : rook to f2
+Castle today                                    : rook to f3
+Castle de 4                                     : rook to f4
+Castle to s5                                    : rook to f5
+Castle 2 X 6                                    : rook to f6
+Castleton                                       : rook to f7
+Castle to f8                                    : rook to f8
+Castle 2 g 1                                    : rook to g1
+kassemgtwo                                      : rook to g2
+Castleton g3                                    : rook to g3
+Castle to g4                                    : rook to g4
+Castle to g5                                    : rook to g5
+Jessica G 6                                     : rook to g6
+Castleton g7                                    : rook to g7
+Castleton g8                                    : rook to g8
+Castleton                                       : rook to h1
+Castleton h2                                    : rook to h2
+Castle Age 3                                    : rook to h3
+Castle to h4                                    : rook to h4
+Tesla p85                                       : rook to h5
+Castle th6                                      : rook to h6
+Catholic 7                                      : rook to h7
+Castle to age 8                                 : rook to h8
+92a1											: knight to a1
+1982                                            : knight to a2
+92083                                           : knight to a3
+92084                                           : knight to a4
+1985                                            : knight to a5
+9286                                            : knight to a6
+9287                                            : knight to a7
+928                                             : knight to a8
+92 b1                                           : knight to b1
+90 b2                                           : knight to b2
+90 bf3                                          : knight to b3
+note to be 4                                    : knight to b4
+92 B 5                                          : knight to b5
+92 B 6                                          : knight to b6
+p7                                              : knight to b7
+90 BA                                           : knight to b8
+91                                              : knight to c1
+92                                              : knight to c2
+93                                              : knight to c3
+92 c4                                           : knight to c4
+Meeteetse 5                                     : knight to c5
+90266                                           : knight to c6
+92 c7                                           : knight to c7
+92 C 8                                          : knight to c8
+91                                              : knight to d1
+92                                              : knight to d2
+92 D 3                                          : knight to d3
+94                                              : knight to d4
+1985                                            : knight to d5
+96                                              : knight to d6
+97                                              : knight to d7
+98                                              : knight to d8
+91                                              : knight to e1
+92                                              : knight to e2
+93                                              : knight to e3
+94                                              : knight to e4
+95                                              : knight to e5
+96                                              : knight to e6
+97                                              : knight to e7
+92 E 8                                          : knight to e8
+92.1                                            : knight to f1
+92 f2                                           : knight to f2
+92f 3                                           : knight to f3
+92 s4                                           : knight to f4
+9285                                            : knight to f5
+9286                                            : knight to f6
+92 s 7                                          : knight to f7
+92f AIT                                         : knight to f8
+Magellan                                        : knight to g1
+92 GTI                                          : knight to g2
+92g 3                                           : knight to g3
+make to g4                                      : knight to g4
+95                                              : knight to g5
+96                                              : knight to g6
+92 Jeep                                         : knight to g7
+98                                              : knight to g8
+9281                                            : knight to h1
+92 h2                                           : knight to h2
+92 h3                                           : knight to h3
+9284                                            : knight to h4
+92h 5                                           : knight to h5
+9286                                            : knight to h6
+97                                              : knight to h7
+92 h8                                           : knight to h8
+1901											: pawn to a1
+1282                                            : pawn to a2
+10283                                           : pawn to a3
+1284                                            : pawn to a4
+Conte 5                                         : pawn to a5
+10 to a 6                                       : pawn to a6
+Ponte a 7                                       : pawn to a7
+porndig                                         : pawn to a8
+Punta the one                                   : pawn to b1
+Punta de ti                                     : pawn to b2
+can to be 3                                     : pawn to b3
+10 to the 4                                     : pawn to b4
+come to b5                                      : pawn to b5
+Ponte b6                                        : pawn to b6
+Punta b7                                        : pawn to b7
+canopy 8                                        : pawn to b8
+Punta C 1                                       : pawn to c1
+fantasy 2                                       : pawn to c2
+contacy 3                                       : pawn to c3
+Punta c4                                        : pawn to c4
+fantasy 5                                       : pawn to c5
+26                                              : pawn to c6
+fantasy 7                                       : pawn to c7
+fantasy8                                        : pawn to c8
+Santa Cena attitude 41                          : pawn to d1
+country 2                                       : pawn to d2
+Ponte di 3                                      : pawn to d3
+Punta de 4                                      : pawn to d4
+quantity 500                                    : pawn to d5
+planta de 6                                     : pawn to d6
+27                                              : pawn to d7
+28                                              : pawn to d8
+kandi one                                       : pawn to e1
+22                                              : pawn to e2
+23                                              : pawn to e3
+24                                              : pawn to e4
+kandi 5                                         : pawn to e5
+kandi 6                                         : pawn to e6
+27                                              : pawn to e7
+late                                            : pawn to e8
+porn Daphne                                     : pawn to f1
+f2                                              : pawn to f2
+Honda f3                                        : pawn to f3
+f4                                              : pawn to f4
+Honda fa5                                       : pawn to f5
+Honda f6b                                       : pawn to f6
+f7                                              : pawn to f7
+f8                                              : pawn to f8
+Pontiac gt1                                     : pawn to g1
+conta g2                                        : pawn to g2
+porn to g3                                      : pawn to g3
+Honda g4                                        : pawn to g4
+gt5                                             : pawn to g5
+Honda g6                                        : pawn to g6
+come to Jesus                                   : pawn to g7
+Canton GA                                       : pawn to g8
+contact 1                                       : pawn to h1
+Honda h22                                       : pawn to h2
+pon de cherry                                   : pawn to h3
+under age 4                                     : pawn to h4
+205                                             : pawn to h5
+sex                                             : pawn to h6
+fantage 7                                       : pawn to h7
+porn de Chao                                    : pawn to h8

@@ -14,6 +14,7 @@ public class EditDistanceClassifier extends Classifier<String> {
 	private Pattern dataPattern;
 	private int labelGroup;
 	private int dataGroup;
+	boolean enableUnk;
 	
 	/**********************************************************************************************
 	* Reset
@@ -27,22 +28,24 @@ public class EditDistanceClassifier extends Classifier<String> {
 	/**********************************************************************************************
 	* Constructors
 	**********************************************************************************************/
-	public EditDistanceClassifier(Pattern filePattern, int dGroup, int lGroup) { 
+	public EditDistanceClassifier(Pattern filePattern, int dGroup, int lGroup, boolean eU) { 
 		super();
 		refPoints = new ArrayList<List<String>>();
 		labels = new ArrayList<String>();
 		dataPattern = filePattern;
 		labelGroup = lGroup;
 		dataGroup = dGroup;
+		enableUnk = eU;
 	}
 	
-	public EditDistanceClassifier(PrintStream o, Pattern filePattern, int dGroup, int lGroup) { 
+	public EditDistanceClassifier(PrintStream o, Pattern filePattern, int dGroup, int lGroup, boolean eU) { 
 		super(o); 
 		refPoints = new ArrayList<List<String>>();
 		labels = new ArrayList<String>();
 		dataPattern = filePattern;
 		labelGroup = lGroup;
 		dataGroup = dGroup;
+		enableUnk = eU;
 	}
 	
 	/**********************************************************************************************
@@ -77,7 +80,7 @@ public class EditDistanceClassifier extends Classifier<String> {
 	protected String parseLabel(String line) {
 		Matcher m = dataPattern.matcher(line);
 		if (m.find())
-			return m.group(labelGroup).trim();
+			return m.group(labelGroup).trim().toLowerCase();
 		
 		return null;
 	}
@@ -85,10 +88,15 @@ public class EditDistanceClassifier extends Classifier<String> {
 	private String parseData(String line) {
 		Matcher m = dataPattern.matcher(line);
 		if (m.find())
-			return m.group(dataGroup).trim();	
+			return m.group(dataGroup).trim().toLowerCase();	
 		
 		return null;
 	}
+	
+   @Override
+   public boolean isUnknown(Classification<String> output) {
+      return output.result.equals("?");
+   }
 
 	@Override
 	public Classification<String> classifyLabeled(String line, boolean verbose) {
@@ -98,8 +106,10 @@ public class EditDistanceClassifier extends Classifier<String> {
 	
 	@Override
 	public Classification<String> classify(String input, boolean verbose) {
-	   if (input.length() < 4)
+	   if (input.length() < 4 && enableUnk)
 	      return new Classification<String>("?", 0);
+	   
+	   input = input.toLowerCase();
 	   
 		int bestLabelIndex = 0;
 		double minDist = Double.POSITIVE_INFINITY;
@@ -144,7 +154,10 @@ public class EditDistanceClassifier extends Classifier<String> {
 		
 		logln("==>" + label + "(" + confidence + ")", verbose);
 		
-		return new Classification<String>(label, confidence);
+		if (confidence > 0.9)
+		   return new Classification<String>(label, confidence);
+		
+		return new Classification<String>("?", 1.0);
 	}
 	
 	/**********************************************************************************************
@@ -276,4 +289,6 @@ public class EditDistanceClassifier extends Classifier<String> {
         }
         return currentSlice[currentSlice.length - 1];
     }
+
+
 }
