@@ -47,6 +47,7 @@ config/local.js
 
 ########################
 copy_java
+mycopy_java
 ssl/
 ssl/*
 ########################

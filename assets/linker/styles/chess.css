@@ -3,7 +3,26 @@ div#top {
 }
 
 #board {
+  position: relative;
+  width: 70%;
   margin: 20px 0px;
+}
+
+table tr {
+  width: auto !important;
+}
+
+tr.computerRow {
+  background-color: #cccccc;
+}
+
+td.iconColumn {
+  width: 10%;
+}
+
+td.lineColumn {
+  padding-left: 20px;
+  width: 90%;
 }
 
 h1.title {
