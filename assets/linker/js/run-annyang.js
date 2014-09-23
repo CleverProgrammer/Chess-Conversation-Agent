@@ -8,6 +8,12 @@ AnnyangClass.setupAnnyang = function() {
       'hello' : function() {
         console.log('Hello!');
         BoardClass.addUserLine('Hello!');
+        BoardClass.addComputerLine('Hello!');
+      },
+      'thanks' : function() {
+        console.log('Thanks!');
+        BoardClass.addUserLine('Thanks!');
+        BoardClass.addComputerLine("You're welcome!");
       },
       'pawn (to) *term' : AnnyangClass.pawnMoveCommand,
       'pawn (takes) *term' : AnnyangClass.pawnMoveCommand,
@@ -23,6 +29,8 @@ AnnyangClass.setupAnnyang = function() {
       'queen (takes) *term' : AnnyangClass.queenMoveCommand,
       'king (to) *term' : AnnyangClass.kingMoveCommand,
       'king (takes) *term' : AnnyangClass.kingMoveCommand,
+      'what (should I) play next' : AnnyangClass.hintCommand,
+      'what (is the) piece at (square) *term' : AnnyangClass.pieceAtSquareCommand,
       '*term' : AnnyangClass.unknownCommand
     }
 
@@ -36,6 +44,7 @@ AnnyangClass.setupAnnyang = function() {
 
 // Pawn move command
 AnnyangClass.pawnMoveCommand = function(term) {
+  BoardClass.addUserLine('pawn ' + term);
   console.log(term);
   var move = ChessClass.returnMoveFromTerm('pawn', term);
   if (!move) {
@@ -56,6 +65,7 @@ AnnyangClass.pawnMoveCommand = function(term) {
 
 // Rook move command
 AnnyangClass.rookMoveCommand = function(term) {
+  BoardClass.addUserLine('rook ' + term);
   console.log(term);
   var move = ChessClass.returnMoveFromTerm('rook', term);
   if (!move) {
@@ -76,6 +86,7 @@ AnnyangClass.rookMoveCommand = function(term) {
 
 // Knight move command
 AnnyangClass.knightMoveCommand = function(term) {
+  BoardClass.addUserLine('knight ' + term);
   console.log(term);
   var move = ChessClass.returnMoveFromTerm('knight', term);
   if (!move) {
@@ -96,6 +107,7 @@ AnnyangClass.knightMoveCommand = function(term) {
 
 // Bishop move command
 AnnyangClass.bishopMoveCommand = function(term) {
+  BoardClass.addUserLine('bishop ' + term);
   console.log(term);
   var move = ChessClass.returnMoveFromTerm('bishop', term);
   if (!move) {
@@ -116,6 +128,7 @@ AnnyangClass.bishopMoveCommand = function(term) {
 
 // Queen move command
 AnnyangClass.queenMoveCommand = function(term) {
+  BoardClass.addUserLine('queen ' + term);
   console.log(term);
   var move = ChessClass.returnMoveFromTerm('queen', term);
   if (!move) {
@@ -136,6 +149,7 @@ AnnyangClass.queenMoveCommand = function(term) {
 
 // King move command
 AnnyangClass.kingMoveCommand = function(term) {
+  BoardClass.addUserLine('king ' + term);
   console.log(term);
   var move = ChessClass.returnMoveFromTerm('king', term);
   if (!move) {
@@ -156,6 +170,7 @@ AnnyangClass.kingMoveCommand = function(term) {
 
 // Unknown command
 AnnyangClass.unknownCommand = function(term) {
+  BoardClass.addUserLine(term);
   console.log('UNKNOWN - ' + term);
   async.series({
     // Hit classifier backend on '{#pieceName} *term' move
@@ -167,6 +182,18 @@ AnnyangClass.unknownCommand = function(term) {
     var move = results.unknown;
     ChessClass.processMove(move);
   });  
+}
+
+AnnyangClass.hintCommand = function() {
+  BoardClass.addUserLine('what should I play');
+  console.log('Providing hint...');
+  BoardClass.addHint();
+}
+
+AnnyangClass.pieceAtSquareCommand = function(term) {
+  BoardClass.addUserLine('what is the piece at square ' + term);
+  console.log('Providing answer...');
+  BoardClass.addPieceAtSquare();
 }
 
 // Helper to prompt user with message

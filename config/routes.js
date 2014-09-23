@@ -37,7 +37,10 @@ module.exports.routes = {
   },
 
   // Classify move
-  'get /chess/classifyMove': 'ChessController.classifyMove'
+  'get /chess/classifyMove': 'ChessController.classifyMove',
+
+  // Request wit.ai
+  'get /chess/requestWit' : 'ChessController.requestWit'
 
   /*
   // But what if you want your home page to display

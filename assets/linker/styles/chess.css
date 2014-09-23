@@ -8,21 +8,21 @@ div#top {
   margin: 20px 0px;
 }
 
+#annyangButton {
+  margin-bottom: 20px;
+}
+
 table tr {
   width: auto !important;
 }
 
-tr.computerRow {
-  background-color: #cccccc;
+.computerRow {
+  font-family: Consolas, monospace;
 }
 
-td.iconColumn {
-  width: 10%;
-}
-
-td.lineColumn {
-  padding-left: 20px;
-  width: 90%;
+.lineWho {
+  color: #666666;
+  margin-right: 10px;
 }
 
 h1.title {

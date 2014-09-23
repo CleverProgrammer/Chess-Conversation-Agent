@@ -15,6 +15,7 @@
  * @docs        :: http://sailsjs.org/#!documentation/controllers
  */
 var java = require('java');
+var request = require('request');
 
 module.exports = {
     
@@ -50,6 +51,31 @@ module.exports = {
     console.log(output);
 
     return res.json({ output: output });
+  },
+
+  requestWit : function(req, res) {
+    // Get message
+    var message = req.param('message');
+
+    console.log('# In requestWit backend...');
+    console.log(message);
+
+    var options = {
+      url: 'https://api.wit.ai/message?q=' + encodeURIComponent(message),
+      headers: {
+        'Authorization': 'Bearer ENVUGDRN5DQJMXN4YQJWEUYOQ66TVU3J',
+        'Accept' : 'application/vnd.wit.20140401'
+      }
+    };
+
+    request(options, function(err, res, body) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(body);
+        return body;
+      }
+    });
   },
 
 

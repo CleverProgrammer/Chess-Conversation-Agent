@@ -27,6 +27,10 @@ ChessClass.runChess = function() {
       ButtonClass.setupButtons();
 
       callback(null, null);
+    },
+    // Setup wit.ai
+    function(nothing, callback) {
+      callback(null, null);
     }
   ],
   function(err, result) {
@@ -142,20 +146,23 @@ ChessClass.classifyMove = function(input, callback) {
 
       // Check if [MOVE] or [CASTLE] or [?]
       if (output.startsWith('[MOVE]')) {
+
         // Check if ambiguous
         // if (ChessClass.ambiguous) {
-          // [AMBIGUOUS]
+        // [AMBIGUOUS]
         //  callback(null, ChessClass.resolveAmbiguity(output));
         // } else {
-          // [MOVE]
-          callback(null, ChessClass.processMoveOutput(output));
+          
+        // [MOVE]
+        callback(null, ChessClass.processMoveOutput(output));
+        
         // }
       } else if (output.startsWith('[CASTLE]')) {
         // [CASTLE]
         callback(null, ChessClass.processCastleOutput(output));
       } else {
         // [?]
-        callback(null, '[?]');
+        callback(null, '[?]//' + input);
       }
     });
 }
@@ -185,11 +192,14 @@ String.prototype.startsWithChessLetter = function() {
 ChessClass.processMove = function(move) {
   if (move) {
     if (typeof move === 'string') {
-      if (move === '[?]') {
+      if (move.startsWith('[?]')) {
         // [?]
         // Prompt user again
         AnnyangClass.promptUser('Move not recognized. Please try again...');
-        console.log('FAILURE TO RECOGNIZE');
+        
+        // REQUEST WIT HERE
+        BoardClass.addComputerLine("Sorry, I didn't understand what you said. Can you please try again?");
+
       } // else if (move === '[AMBIGUOUS]') {
         // console.log('AMBIGUITY');
         // }
@@ -202,7 +212,9 @@ ChessClass.processMove = function(move) {
     // Illegal move
     // Prompt user again
     AnnyangClass.promptUser('Illegal move. Please try again...');
-    console.log('ILLEGAL MOVE');
+    
+    // REQUEST WIT HERE
+    BoardClass.addComputerLine("Sorry, I didn't understand what you said. Can you please try again?");
   }
 }
 
@@ -257,6 +269,19 @@ ChessClass.processCastleOutput = function(output) {
     return ChessClass.game.move('O-O-O');
   }
 }
+
+ChessClass.requestWit = function(input) {
+  var split = input.split('//');
+  var message = split[1].toLowerCase();
+
+  superagent
+    .get('/chess/requestWit?message=' + message)
+    .end(function(res) {
+      console.log('# In requestWit frontend...');
+      console.log(res);
+    });
+}
+
 
 // Check for possible capture
 ChessClass.checkCapture = function(piece, letter, number) {
